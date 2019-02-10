@@ -1,0 +1,8 @@
+{
+    "name": "alexsivka/sivka-request",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0",
+    "minimum-stability": "dev",
+    "require": {}
+}
