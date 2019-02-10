@@ -4,5 +4,10 @@
     "license": "MIT",
     "version": "1.0.0",
     "minimum-stability": "dev",
-    "require": {}
+    "require": {},
+	"autoload": {
+		"psr-4": {
+			"Sivka\\": "/"
+		}
+	},
 }
