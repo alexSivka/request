@@ -2,6 +2,12 @@
 
 This library provides simple way to access for request data.
 
+## Installation
+
+```
+composer require sivka/request
+```
+
 ## Table of contents
 - [Example](#example)
 - [Available methods](#available-methods)
