@@ -1,9 +1,6 @@
 {   
-    "name": "sivka/request",   
-    "type": "library",
+    "name": "sivka/request",
     "license": "MIT",
-    "version": "1.0.0",
-    "minimum-stability": "dev",
     "require": {},
     "autoload": {
         "psr-4": {
