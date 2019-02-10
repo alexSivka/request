@@ -1,13 +1,13 @@
-{
-    "name": "alexsivka/sivka-request",
+{   
+    "name": "sivka/request",   
     "type": "library",
     "license": "MIT",
     "version": "1.0.0",
     "minimum-stability": "dev",
     "require": {},
-	"autoload": {
-		"psr-4": {
-			"Sivka\\": "/"
-		}
-	}
+    "autoload": {
+        "psr-4": {
+            "Sivka\\": "/"
+        }
+    }
 }
