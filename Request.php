@@ -73,11 +73,6 @@ class Request {
         return (array)$this->data;
     }
 
-    public function merge($obj){
-        $this->set( array_merge($this->toArray(), (array)$obj ) );
-        return $this;
-    }
-
     public function delete($key){
         if(isset($this->data->$key)) unset($this->data->$key);
         return $this;
@@ -87,8 +82,8 @@ class Request {
         return $this->_get($key);
     }
 
-    public function _get($key = false){
-        if($key !== false) return isset($this->data->$key) ? $this->data->$key : null;
+    public function _get($key = false, $default = null){
+        if($key !== false) return isset($this->data->$key) ? $this->data->$key : $default;
         return $this;
     }
 
@@ -97,9 +92,14 @@ class Request {
     }
 
     public function __call($name, $arguments){
-        if($name == 'get') return $this->_get($arguments[0]);
-        if($name == 'int') return (int)$this->_get($arguments[0]);
-        if($name == 'string') return (string)$this->_get($arguments[0]);
+        $arg2 = isset($arguments[1]) ? $arguments[1] : null;
+        if($name == 'get') return $this->_get($arguments[0], $arg2);
+        
+        $arg2 = isset($arguments[1]) ? $arguments[1] : 0;
+        if($name == 'int') return (int)$this->_get($arguments[0], $arg2);
+
+        $arg2 = isset($arguments[1]) ? $arguments[1] : '';
+        if($name == 'string') return (string)$this->_get($arguments[0], $arg2);
     }
 
     public function __toString(){
