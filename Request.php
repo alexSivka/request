@@ -22,6 +22,10 @@ class Request {
     public static function post($key = false){
         return self::setData($_POST, $key);
     }
+    
+    public static function files($key = false){
+        return self::setData($_FILES, $key);
+    }
 
     public static function cookie($key = false){
         return self::setData($_COOKIE, $key);
@@ -62,11 +66,11 @@ class Request {
     }
 
     public function count(){
-        return count( $this->data->toArray() );
+        return count( $this->toArray() );
     }
 
     public function toJson(){
-        return json_encode( $this->data->toArray() );
+        return json_encode( $this->toArray() );
     }
 
     public function toArray(){

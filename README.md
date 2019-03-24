@@ -45,6 +45,7 @@ echo $post->not_defined_var; // NULL
 ```php
 Request::get(); // $_GET
 Request::post(); // $_POST
+Request::files(); // $_FILES
 Request::session(); // $_SESSION
 Request::cookie(); // $_COOKIE
 Request::server(); // $_SERVER
